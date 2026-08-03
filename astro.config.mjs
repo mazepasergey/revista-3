@@ -20,9 +20,6 @@ const isDev =
 // https://astro.build/config
 export default defineConfig({
   site: 'https://bkvg.fyi',
-    process.env.GITHUB_PAGES === "true"
-      ? "https://erfianugrah.github.io"
-      : "https://www.erfianugrah.com",
   base: process.env.GITHUB_PAGES === "true" ? "/revista-3" : undefined,
 
   image: {
