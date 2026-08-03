@@ -3,7 +3,6 @@
 		metrics
 	}
 
-	# debug (disabled for production)
 	grace_period 5s
 	log {
 		level info
@@ -23,7 +22,7 @@
 }
 
 :80 {
-	root * /usr/share/caddy
+	root * /app/dist
 	try_files {path} {path}/ /404.html
 	encode zstd gzip
 	file_server {
