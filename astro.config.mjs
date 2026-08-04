@@ -22,9 +22,11 @@ export default defineConfig({
   site: 'https://bkvg.fyi',
   base: process.env.GITHUB_PAGES === "true" ? "/revista-3" : undefined,
 
- image: {
+image: {
     domains: ["erfianugrah.com", "image.erfi.io"],
-    service: { entrypoint: "astro/assets/services/noop" },
+    service: isDev
+      ? { entrypoint: "astro/assets/services/noop" }
+      : hqService(),
   },
 
   integrations: [
